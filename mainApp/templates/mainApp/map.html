@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script
+		  src="https://code.jquery.com/jquery-3.1.1.min.js"
+		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+		  crossorigin="anonymous">
+		</script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+			
+		<title>temporarily title</title>
+
+		<style type="text/css">
+			#map {
+				width : 100%;
+				height: 600px;
+				background-color: grey;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	          
+	          </button>
+	          <a class="navbar-brand" href="#">temporarily title</a>
+	        </div>
+	        <div id="navbar" class="collapse navbar-collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href=#>map</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+			
+		<div id="map"></div>
+    <script>
+      function initMap() {
+
+      	var locate = {lat: {{varlat}}, lng: {{varlng}} };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: locate,
+          zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+        	map : map,
+        	position: locate,
+
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdCYyQgDWC0XUJVsdXAYbqRv_jco5zDQo&callback=initMap"
+    async defer></script>
+		{{name}}
+	</body>
+</html>
